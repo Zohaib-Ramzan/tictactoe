@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, Text , StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import Snackbar from 'react-native-snackbar';
 
@@ -71,22 +71,22 @@ const App = () => {
     if (gameWinner) {
       return Snackbar.show({
         text: gameWinner,
-        backgroundColor : "#000000",
-        textColor:"#FFFFFF"
-      })
+        backgroundColor: '#000000',
+        textColor: '#FFFFFF',
+      });
     }
     if (gameState[itemNumber] === 'empty') {
-      gameState[itemNumber] = isCross ? "cross" : "circle"
-      setIsCross(!isCross)
+      gameState[itemNumber] = isCross ? 'cross' : 'circle';
+      setIsCross(!isCross);
     } else {
       return Snackbar.show({
-        text : "Position is already Filled!",
-        backgroundColor : "red",
-        textColor : '#FFF'
-      })
+        text: 'Position is already Filled!',
+        backgroundColor: 'red',
+        textColor: '#FFF',
+      });
     }
-    checkIsWinner()
-  }
+    checkIsWinner();
+  };
 
   return (
     <View>
